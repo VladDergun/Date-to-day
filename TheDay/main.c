@@ -107,7 +107,7 @@ int DateCheck(int date, int m, int year, int hyear){
                 if(hyear == 0){
                     if (date > 28){
                         printf("February has only 28 days in this year.\n");
-                        break;\
+                        break;
                     }
                     else{
                         int result = 1;
