@@ -12,16 +12,16 @@ int LeapYear(int year); //function to determine if the year is leap or not
 main(){
 
     int date, m, year, n;
-
+    int c; //used in buffer-cleaning
     int day;
     char buffer[12]; //temporary input storage
 
     while(1){
         printf("Please, enter the date in following format: day.month.year : ");
 
-        fgets(buffer, sizeof(buffer), stdin);
+        fgets(buffer, sizeof(buffer)-1, stdin);
         sscanf(buffer, "%d.%d.%d", &date, &m, &year);
-        fflush(stdin);
+        while ((c = getchar()) != '\n' && c != EOF);
 
 
         int hyear = LeapYear(year);
